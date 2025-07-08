@@ -10,5 +10,10 @@ app.use(cors({
 app.use(express.json());
 app.use("/api/posture", postureRoutes);
 
+app.get("/api/test", (req, res) => {
+  res.json({ message: "API working fine!" });
+});
+
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
