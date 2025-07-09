@@ -4,10 +4,13 @@ import multer from "multer";
 import postureRoutes from "./routes/postureRoutes.js";
 
 const app = express();
+
 app.use(cors({
   origin: "*",
-  methods: ["GET", "POST", "OPTIONS"]
+  methods: ["GET", "POST"],
+  allowedHeaders: ["Content-Type"]
 }));
+
 
 app.use(express.json());
 app.use("/api/posture", postureRoutes);
