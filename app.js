@@ -5,8 +5,10 @@ import postureRoutes from "./routes/postureRoutes.js";
 
 const app = express();
 app.use(cors({
-    origin: "*"
+  origin: "*",
+  methods: ["GET", "POST", "OPTIONS"]
 }));
+
 app.use(express.json());
 app.use("/api/posture", postureRoutes);
 
